@@ -13,8 +13,8 @@ public class Estudiante extends Persona{
     private  String serie;
 
 
-    @ManyToOne
-    @JoinColumn(name = "IDPERSONA")
+    @ManyToOne(optional = false, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    //@JoinColumn(name = "IDPERSONA")
     private Escuela escuela;
 
     public Estudiante() {

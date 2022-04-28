@@ -1,6 +1,7 @@
 package edu.ilp01.sysgailp01.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "escuela")
@@ -12,6 +13,9 @@ public class Escuela {
     private String denominacion;
     @Column(name = "codigo_escuela",length =10 )
     private String codigoEscuela;
+
+    @OneToMany(mappedBy = "escuela")
+    private List<Estudiante> estudiantes;
 
     public Long getIdescuela() {
         return idescuela;
